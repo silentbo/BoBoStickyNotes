@@ -1,0 +1,76 @@
+primaryStage.setTitle("左上角名字");
+
+primaryStage.getIcons().add(new Image("/icon/logo1.png"));/添加图标
+
+窗口显示方式 有5种 默认第一种
+
+primaryStage.initStyle(StageStyle.DECORATED);//正常显示 也是默认
+
+primaryStage.initStyle(StageStyle.TRANSPARENT);//三个组键都没有(最小化 最大化 关闭)
+
+primaryStage.initStyle(StageStyle.UNDECORATED);//背景透明
+
+primaryStage.initStyle(StageStyle.UNIFIED);//无title栏的背景颜色
+
+primaryStage.initStyle(StageStyle.UTILITY);//无最小化最大化 只有关闭按钮
+
+primaryStage.setMaximized(true);//全屏显示
+
+primaryStage.setResizable(false);//窗口不可改变高度 宽度 这样就不用调节自适应了
+
+primaryStage.setOpacity(1);//设置透明度 0为完全透明 1为完全不透明 默认是1
+
+primaryStage.setAlwaysOnTop(true);//窗口置顶 鼠标点击窗口外 也不会最下化 除非自己点击最小化
+
+设置窗口的宽高
+
+primaryStage.setHeight(673);默认673
+
+primaryStage.setWidth(1104);默认1104
+
+初始化窗口在屏幕的位置 以显示屏左上角为原点 上边框为x轴 左边框为y轴
+
+primaryStage.setX(200);单位px
+
+primaryStage.setY(200);
+
+如果不想做自适应 就看第5个
+
+/**
+
+* 动态监听高度 如果不想做自适应 就看第5个
+
+*/
+
+primaryStage.heightProperty().addListener(new ChangeListener() {undefined
+
+@Override
+
+public void changed(ObservableValue extends Number> observable, Number oldValue, Number newValue) {undefined
+
+System.out.println("当前高度="+newValue);//
+
+}
+
+});
+
+/**
+
+* 监听宽度
+
+*/
+
+primaryStage.widthProperty().addListener(new ChangeListener() {undefined
+
+@Override
+
+public void changed(ObservableValue extends Number> observable, Number oldValue, Number newValue) {undefined
+
+System.out.println("当前宽度="+newValue);
+
+}
+
+});
+————————————————
+版权声明：本文为CSDN博主「杨妹妹」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_30670053/article/details/114852196
